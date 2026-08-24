@@ -10,33 +10,53 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as RcpRouteImport } from './routes/rcp'
+import { Route as ProtocoloIdRouteImport } from './routes/protocolo.$id'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const RcpRoute = RcpRouteImport.update({
+  id: '/rcp',
+  path: '/rcp',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProtocoloIdRoute = ProtocoloIdRouteImport.update({
+  id: '/protocolo/$id',
+  path: '/protocolo/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/rcp': typeof RcpRoute
+  '/protocolo/$id': typeof ProtocoloIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/rcp': typeof RcpRoute
+  '/protocolo/$id': typeof ProtocoloIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/rcp': typeof RcpRoute
+  '/protocolo/$id': typeof ProtocoloIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/rcp' | '/protocolo/$id'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/rcp' | '/protocolo/$id'
+  id: '__root__' | '/' | '/rcp' | '/protocolo/$id'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  RcpRoute: typeof RcpRoute
+  ProtocoloIdRoute: typeof ProtocoloIdRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +68,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/rcp': {
+      id: '/rcp'
+      path: '/rcp'
+      fullPath: '/rcp'
+      preLoaderRoute: typeof RcpRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/protocolo/$id': {
+      id: '/protocolo/$id'
+      path: '/protocolo/$id'
+      fullPath: '/protocolo/$id'
+      preLoaderRoute: typeof ProtocoloIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  RcpRoute: RcpRoute,
+  ProtocoloIdRoute: ProtocoloIdRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

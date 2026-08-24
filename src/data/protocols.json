@@ -1,0 +1,128 @@
+[
+  {
+    "id": "hemorragia",
+    "titulo": "Hemorragia",
+    "titleEn": "Bleeding",
+    "fuente": "Cruz Roja Internacional — Primeros auxilios 2020",
+    "pasos": [
+      {
+        "id": 1,
+        "texto": "Protégete: usa guantes o una bolsa de plástico antes de tocar la sangre.",
+        "textEn": "Protect yourself: use gloves or a plastic bag before touching blood.",
+        "segundosTimer": 0
+      },
+      {
+        "id": 2,
+        "texto": "Presiona la herida con fuerza usando un paño limpio o tu mano.",
+        "textEn": "Press hard on the wound with a clean cloth or your hand.",
+        "segundosTimer": 0
+      },
+      {
+        "id": 3,
+        "texto": "Mantén la presión sin soltar durante 10 minutos completos.",
+        "textEn": "Keep pressing without letting go for a full 10 minutes.",
+        "segundosTimer": 600
+      },
+      {
+        "id": 4,
+        "texto": "Si el paño se empapa, no lo quites: coloca otro encima y sigue presionando.",
+        "textEn": "If the cloth soaks through, don't remove it: add another on top and keep pressing.",
+        "segundosTimer": 0
+      },
+      {
+        "id": 5,
+        "texto": "Eleva la zona herida por encima del nivel del corazón si no hay fractura.",
+        "textEn": "Raise the injured area above heart level if there is no fracture.",
+        "segundosTimer": 0
+      },
+      {
+        "id": 6,
+        "texto": "Abriga a la persona, mantenla acostada y vigila su respiración hasta que llegue ayuda.",
+        "textEn": "Keep the person warm, lying down, and watch their breathing until help arrives.",
+        "segundosTimer": 0
+      }
+    ]
+  },
+  {
+    "id": "atragantamiento",
+    "titulo": "Atragantamiento",
+    "titleEn": "Choking",
+    "fuente": "American Red Cross — Choking Care Steps 2021",
+    "pasos": [
+      {
+        "id": 1,
+        "texto": "Pregunta: \"¿Te estás ahogando?\". Si no puede hablar ni toser, actúa de inmediato.",
+        "textEn": "Ask: \"Are you choking?\" If they can't speak or cough, act immediately.",
+        "segundosTimer": 0
+      },
+      {
+        "id": 2,
+        "texto": "Colócate detrás. Da 5 golpes firmes entre los omóplatos con el talón de la mano.",
+        "textEn": "Stand behind them. Give 5 firm back blows between the shoulder blades.",
+        "segundosTimer": 0
+      },
+      {
+        "id": 3,
+        "texto": "Rodea su cintura, cierra el puño sobre el ombligo y haz 5 compresiones hacia adentro y arriba.",
+        "textEn": "Wrap your arms around the waist, fist above the navel, and give 5 inward-upward thrusts.",
+        "segundosTimer": 0
+      },
+      {
+        "id": 4,
+        "texto": "Alterna 5 golpes en la espalda y 5 compresiones hasta que expulse el objeto.",
+        "textEn": "Alternate 5 back blows and 5 thrusts until the object comes out.",
+        "segundosTimer": 0
+      },
+      {
+        "id": 5,
+        "texto": "Si pierde el conocimiento, acuéstala con cuidado e inicia RCP.",
+        "textEn": "If they become unconscious, lower them gently and start CPR.",
+        "segundosTimer": 0
+      }
+    ]
+  },
+  {
+    "id": "rcp",
+    "titulo": "RCP",
+    "titleEn": "CPR",
+    "fuente": "AHA — Guías de RCP y ACE 2020",
+    "pasos": [
+      {
+        "id": 1,
+        "texto": "Comprueba si responde: sacude sus hombros y llámala en voz alta.",
+        "textEn": "Check for response: tap the shoulders and call out loudly.",
+        "segundosTimer": 0
+      },
+      {
+        "id": 2,
+        "texto": "Mira si respira con normalidad durante 10 segundos.",
+        "textEn": "Look for normal breathing for 10 seconds.",
+        "segundosTimer": 10
+      },
+      {
+        "id": 3,
+        "texto": "Pide a alguien que busque ayuda y un desfibrilador (DEA).",
+        "textEn": "Ask someone to get help and an AED.",
+        "segundosTimer": 0
+      },
+      {
+        "id": 4,
+        "texto": "Coloca las manos entrelazadas en el centro del pecho, brazos rectos.",
+        "textEn": "Place interlocked hands at the center of the chest, arms straight.",
+        "segundosTimer": 0
+      },
+      {
+        "id": 5,
+        "texto": "Comprime fuerte y rápido: 5 cm de profundidad, 110 por minuto.",
+        "textEn": "Push hard and fast: 5 cm deep, 110 per minute.",
+        "segundosTimer": 0
+      },
+      {
+        "id": 6,
+        "texto": "No te detengas hasta que llegue ayuda o la persona respire por sí misma.",
+        "textEn": "Don't stop until help arrives or the person breathes on their own.",
+        "segundosTimer": 0
+      }
+    ]
+  }
+]
