@@ -10,12 +10,18 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as InformeRouteImport } from './routes/informe'
 import { Route as RcpRouteImport } from './routes/rcp'
 import { Route as ProtocoloIdRouteImport } from './routes/protocolo.$id'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InformeRoute = InformeRouteImport.update({
+  id: '/informe',
+  path: '/informe',
   getParentRoute: () => rootRouteImport,
 } as any)
 const RcpRoute = RcpRouteImport.update({
@@ -31,30 +37,34 @@ const ProtocoloIdRoute = ProtocoloIdRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/informe': typeof InformeRoute
   '/rcp': typeof RcpRoute
   '/protocolo/$id': typeof ProtocoloIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/informe': typeof InformeRoute
   '/rcp': typeof RcpRoute
   '/protocolo/$id': typeof ProtocoloIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/informe': typeof InformeRoute
   '/rcp': typeof RcpRoute
   '/protocolo/$id': typeof ProtocoloIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/rcp' | '/protocolo/$id'
+  fullPaths: '/' | '/informe' | '/rcp' | '/protocolo/$id'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/rcp' | '/protocolo/$id'
-  id: '__root__' | '/' | '/rcp' | '/protocolo/$id'
+  to: '/' | '/informe' | '/rcp' | '/protocolo/$id'
+  id: '__root__' | '/' | '/informe' | '/rcp' | '/protocolo/$id'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  InformeRoute: typeof InformeRoute
   RcpRoute: typeof RcpRoute
   ProtocoloIdRoute: typeof ProtocoloIdRoute
 }
@@ -66,6 +76,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/informe': {
+      id: '/informe'
+      path: '/informe'
+      fullPath: '/informe'
+      preLoaderRoute: typeof InformeRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/rcp': {
@@ -87,6 +104,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  InformeRoute: InformeRoute,
   RcpRoute: RcpRoute,
   ProtocoloIdRoute: ProtocoloIdRoute,
 }
