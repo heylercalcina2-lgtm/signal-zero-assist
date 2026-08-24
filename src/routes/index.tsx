@@ -11,6 +11,7 @@ import {
   Users,
   Wind,
   Zap,
+  ClipboardList,
 } from "lucide-react";
 import { useLang } from "@/lib/i18n";
 import { AppFooter } from "@/components/AppFooter";
@@ -105,6 +106,14 @@ function Home() {
           );
         })}
       </div>
+
+      <Link
+        to="/informe"
+        className="mt-3 flex min-h-[72px] items-center justify-center gap-3 rounded-2xl border border-border bg-card text-base font-semibold active:bg-secondary"
+      >
+        <ClipboardList className="h-6 w-6 text-primary" />
+        {t.report}
+      </Link>
 
       <div className="mt-6 grid grid-cols-3 gap-3">
         <ActionButton
