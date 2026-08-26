@@ -3,11 +3,13 @@ import { motion } from "motion/react";
 import {
   Activity,
   Bell,
+  Compass,
   Download,
   Droplet,
   Flame,
   Flashlight,
   Languages,
+  Move,
   Settings,
   Sparkles,
   Users,
@@ -50,6 +52,7 @@ const CARDS = [
   { key: "atrapada", icon: Users, to: "atrapada" },
   { key: "quemadura", icon: Flame, to: "quemadura" },
   { key: "convulsion", icon: Zap, to: "convulsion" },
+  { key: "recuperacion", icon: Move, to: "recuperacion" },
 ] as const;
 
 function Home() {
@@ -98,6 +101,14 @@ function Home() {
 
       <ProtocolSearch />
 
+      <Link
+        to="/triaje"
+        className="mt-3 flex min-h-[56px] w-full items-center justify-center gap-2 rounded-2xl border border-dashed border-border bg-card/50 text-sm font-semibold text-muted-foreground active:bg-secondary"
+      >
+        <Compass className="h-4 w-4" />
+        {t.triageCta}
+      </Link>
+
       <div className="flex justify-center py-8">
         <motion.button
           type="button"
@@ -119,7 +130,7 @@ function Home() {
       </div>
 
       <div className="grid grid-cols-2 gap-3">
-        {CARDS.map(({ key, icon: Icon, to }) => {
+        {CARDS.map(({ key, icon: Icon, to }, i) => {
           const label = t.cards[key as keyof typeof t.cards];
           const content = (
             <>
@@ -127,8 +138,10 @@ function Home() {
               <span className="text-base font-semibold leading-tight">{label}</span>
             </>
           );
-          const cls =
-            "flex min-h-[96px] flex-col items-start justify-between rounded-2xl border border-border bg-card p-4 text-left transition-colors active:bg-secondary";
+          // An odd card count leaves the last one alone in its row — span
+          // both columns instead of leaving a lopsided half-empty row.
+          const isLast = i === CARDS.length - 1;
+          const cls = `flex min-h-[96px] flex-col items-start justify-between rounded-2xl border border-border bg-card p-4 text-left transition-colors active:bg-secondary ${isLast ? "col-span-2" : ""}`;
           return to ? (
             <Link key={key} to="/protocolo/$id" params={{ id: to }} className={cls}>
               {content}

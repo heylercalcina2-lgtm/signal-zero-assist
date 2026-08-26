@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AjustesRouteImport } from './routes/ajustes'
 import { Route as InformeRouteImport } from './routes/informe'
 import { Route as RcpRouteImport } from './routes/rcp'
+import { Route as TriajeRouteImport } from './routes/triaje'
 import { Route as ProtocoloIdRouteImport } from './routes/protocolo.$id'
 
 const IndexRoute = IndexRouteImport.update({
@@ -35,6 +36,11 @@ const RcpRoute = RcpRouteImport.update({
   path: '/rcp',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TriajeRoute = TriajeRouteImport.update({
+  id: '/triaje',
+  path: '/triaje',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ProtocoloIdRoute = ProtocoloIdRouteImport.update({
   id: '/protocolo/$id',
   path: '/protocolo/$id',
@@ -46,6 +52,7 @@ export interface FileRoutesByFullPath {
   '/ajustes': typeof AjustesRoute
   '/informe': typeof InformeRoute
   '/rcp': typeof RcpRoute
+  '/triaje': typeof TriajeRoute
   '/protocolo/$id': typeof ProtocoloIdRoute
 }
 export interface FileRoutesByTo {
@@ -53,6 +60,7 @@ export interface FileRoutesByTo {
   '/ajustes': typeof AjustesRoute
   '/informe': typeof InformeRoute
   '/rcp': typeof RcpRoute
+  '/triaje': typeof TriajeRoute
   '/protocolo/$id': typeof ProtocoloIdRoute
 }
 export interface FileRoutesById {
@@ -61,14 +69,23 @@ export interface FileRoutesById {
   '/ajustes': typeof AjustesRoute
   '/informe': typeof InformeRoute
   '/rcp': typeof RcpRoute
+  '/triaje': typeof TriajeRoute
   '/protocolo/$id': typeof ProtocoloIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/ajustes' | '/informe' | '/rcp' | '/protocolo/$id'
+  fullPaths:
+    '/' | '/ajustes' | '/informe' | '/rcp' | '/triaje' | '/protocolo/$id'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/ajustes' | '/informe' | '/rcp' | '/protocolo/$id'
-  id: '__root__' | '/' | '/ajustes' | '/informe' | '/rcp' | '/protocolo/$id'
+  to: '/' | '/ajustes' | '/informe' | '/rcp' | '/triaje' | '/protocolo/$id'
+  id:
+    | '__root__'
+    | '/'
+    | '/ajustes'
+    | '/informe'
+    | '/rcp'
+    | '/triaje'
+    | '/protocolo/$id'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -76,6 +93,7 @@ export interface RootRouteChildren {
   AjustesRoute: typeof AjustesRoute
   InformeRoute: typeof InformeRoute
   RcpRoute: typeof RcpRoute
+  TriajeRoute: typeof TriajeRoute
   ProtocoloIdRoute: typeof ProtocoloIdRoute
 }
 
@@ -109,6 +127,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof RcpRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/triaje': {
+      id: '/triaje'
+      path: '/triaje'
+      fullPath: '/triaje'
+      preLoaderRoute: typeof TriajeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/protocolo/$id': {
       id: '/protocolo/$id'
       path: '/protocolo/$id'
@@ -124,6 +149,7 @@ const rootRouteChildren: RootRouteChildren = {
   AjustesRoute: AjustesRoute,
   InformeRoute: InformeRoute,
   RcpRoute: RcpRoute,
+  TriajeRoute: TriajeRoute,
   ProtocoloIdRoute: ProtocoloIdRoute,
 }
 export const routeTree = rootRouteImport

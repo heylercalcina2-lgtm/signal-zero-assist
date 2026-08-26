@@ -7,6 +7,7 @@ import { AppFooter } from "@/components/AppFooter";
 import { useMetronome } from "@/lib/metronome";
 import { useSession } from "@/lib/engine";
 import { useWakeLock } from "@/lib/wakeLock";
+import { CprHands } from "@/components/illustrations/CprHands";
 
 export const Route = createFileRoute("/rcp")({
   head: () => ({
@@ -55,6 +56,10 @@ function CprMode() {
       <span className="rounded-2xl border border-border bg-card px-4 py-2 text-sm font-semibold tracking-widest text-primary">
         {t.cprMode} · {t.bpm}
       </span>
+
+      <div className="mt-4 h-16 w-16 shrink-0">
+        <CprHands />
+      </div>
 
       <div className="flex flex-1 items-center justify-center">
         <div className="relative flex h-64 w-64 items-center justify-center">

@@ -1,0 +1,78 @@
+{
+  "fuente": "American Heart Association — Hands-Only CPR (evaluación de respuesta y respiración) y First Aid (posición de recuperación para inconsciente que respira); Cruz Roja Americana — Guía de primeros auxilios, evaluación primaria del rescatista lego (vía aérea, respiración, circulación)",
+  "fuenteEn": "American Heart Association — Hands-Only CPR (checking response and breathing) and First Aid (recovery position for an unresponsive person who is breathing); American Red Cross — First aid guide, lay-rescuer primary assessment (airway, breathing, circulation)",
+  "inicio": "q_responde",
+  "nodos": {
+    "q_responde": {
+      "pregunta": "¿La persona responde cuando le hablas o la tocas?",
+      "questionEn": "Does the person respond when you talk to them or touch them?",
+      "opciones": [
+        { "texto": "Sí", "textEn": "Yes", "siguiente": "q_atragantado" },
+        { "texto": "No", "textEn": "No", "siguiente": "q_respira" }
+      ]
+    },
+    "q_respira": {
+      "pregunta": "¿Respira con normalidad? Mírale el pecho 10 segundos.",
+      "questionEn": "Are they breathing normally? Watch their chest for 10 seconds.",
+      "opciones": [
+        { "texto": "Sí", "textEn": "Yes", "siguiente": "r_recuperacion" },
+        { "texto": "No", "textEn": "No", "siguiente": "r_rcp" },
+        { "texto": "No estoy seguro", "textEn": "Not sure", "siguiente": "r_rcp" }
+      ]
+    },
+    "q_atrapada": {
+      "pregunta": "¿Está atrapada bajo escombros o algo pesado?",
+      "questionEn": "Are they trapped under rubble or something heavy?",
+      "opciones": [
+        { "texto": "Sí", "textEn": "Yes", "siguiente": "r_atrapada" },
+        { "texto": "No", "textEn": "No", "siguiente": "q_convulsion" }
+      ]
+    },
+    "q_convulsion": {
+      "pregunta": "¿Tuvo movimientos bruscos o sacudidas antes de quedar así?",
+      "questionEn": "Did they have jerking movements or shaking before this happened?",
+      "opciones": [
+        { "texto": "Sí", "textEn": "Yes", "siguiente": "r_convulsion" },
+        { "texto": "No", "textEn": "No", "siguiente": "r_no_determinado" }
+      ]
+    },
+    "q_atragantado": {
+      "pregunta": "¿Se agarra la garganta, o no puede hablar ni toser?",
+      "questionEn": "Are they clutching their throat, or unable to speak or cough?",
+      "opciones": [
+        { "texto": "Sí", "textEn": "Yes", "siguiente": "r_atragantamiento" },
+        { "texto": "No", "textEn": "No", "siguiente": "q_sangrado" }
+      ]
+    },
+    "q_sangrado": {
+      "pregunta": "¿Está sangrando mucho?",
+      "questionEn": "Are they bleeding heavily?",
+      "opciones": [
+        { "texto": "Sí", "textEn": "Yes", "siguiente": "r_hemorragia" },
+        { "texto": "No", "textEn": "No", "siguiente": "q_quemadura" }
+      ]
+    },
+    "q_quemadura": {
+      "pregunta": "¿Se quemó con fuego, líquido caliente, químico o electricidad?",
+      "questionEn": "Were they burned by fire, hot liquid, a chemical, or electricity?",
+      "opciones": [
+        { "texto": "Sí", "textEn": "Yes", "siguiente": "r_quemadura" },
+        { "texto": "No", "textEn": "No", "siguiente": "r_no_determinado" }
+      ]
+    },
+    "r_rcp": { "resultado": "rcp", "urgente": true },
+    "r_recuperacion": {
+      "resultado": "recuperacion",
+      "seguimiento": [
+        { "texto": "¿Está atrapada?", "textEn": "Are they trapped?", "siguiente": "q_atrapada" },
+        { "texto": "¿Tuvo convulsión?", "textEn": "Did they have a seizure?", "siguiente": "q_convulsion" }
+      ]
+    },
+    "r_atrapada": { "resultado": "atrapada" },
+    "r_convulsion": { "resultado": "convulsion" },
+    "r_atragantamiento": { "resultado": "atragantamiento" },
+    "r_hemorragia": { "resultado": "hemorragia" },
+    "r_quemadura": { "resultado": "quemadura" },
+    "r_no_determinado": { "resultado": "no_determinado" }
+  }
+}

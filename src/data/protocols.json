@@ -23,7 +23,8 @@
         "id": 3,
         "texto": "Presiona la herida con fuerza usando un paño limpio o tu mano.",
         "textEn": "Press hard on the wound with a clean cloth or your hand.",
-        "segundosTimer": 0
+        "segundosTimer": 0,
+        "ilustracion": "bleedingPressure"
       },
       {
         "id": 4,
@@ -75,7 +76,8 @@
         "id": 3,
         "texto": "Rodea su cintura, cierra el puño sobre el ombligo y haz 5 compresiones hacia adentro y arriba.",
         "textEn": "Wrap your arms around the waist, fist above the navel, and give 5 inward-upward thrusts.",
-        "segundosTimer": 0
+        "segundosTimer": 0,
+        "ilustracion": "chokingHeimlich"
       },
       {
         "id": 4,
@@ -133,7 +135,8 @@
         "id": 5,
         "texto": "Con los brazos rectos, comprime fuerte y rápido: unos 5 cm de profundidad, a 100-120 compresiones por minuto. No pares.",
         "textEn": "With straight arms, push hard and fast: about 5 cm (2 in) deep, at 100-120 compressions per minute. Don't stop.",
-        "segundosTimer": 0
+        "segundosTimer": 0,
+        "ilustracion": "cprHands"
       },
       {
         "id": 6,
@@ -301,6 +304,59 @@
         "id": 7,
         "texto": "Quédate con ella hasta que esté totalmente despierta y orientada. Es normal que esté confundida o cansada.",
         "textEn": "Stay with them until they're fully awake and alert. It's normal for them to feel confused or tired afterward.",
+        "segundosTimer": 0
+      }
+    ]
+  },
+  {
+    "id": "recuperacion",
+    "titulo": "Posición de recuperación",
+    "titleEn": "Recovery Position",
+    "palabrasClave": ["inconsciente pero respira", "no responde pero respira", "se desmayó y respira", "posición de recuperación", "de lado inconsciente", "respira pero no despierta"],
+    "palabrasClaveEn": ["unconscious but breathing", "unresponsive but breathing", "passed out and breathing", "recovery position", "unconscious on their side", "breathing but won't wake up"],
+    "fuente": "American Heart Association — First Aid; Cruz Roja Americana — Recovery Position / First Aid Basics",
+    "pasos": [
+      {
+        "id": 1,
+        "texto": "Pide a alguien que llame a emergencias ahora. Si estás solo, llama tú antes de moverla.",
+        "textEn": "Have someone call emergency services now. If you're alone, call yourself before moving them.",
+        "segundosTimer": 0
+      },
+      {
+        "id": 2,
+        "texto": "Arrodíllate a su lado. Estira el brazo más cercano a ti en ángulo recto con el cuerpo, con la palma hacia arriba.",
+        "textEn": "Kneel beside them. Straighten the arm nearest you at a right angle to their body, palm facing up.",
+        "segundosTimer": 0
+      },
+      {
+        "id": 3,
+        "texto": "Cruza el otro brazo sobre su pecho y apoya el dorso de su mano contra la mejilla más cercana a ti.",
+        "textEn": "Bring their other arm across their chest and rest the back of their hand against the cheek nearest you.",
+        "segundosTimer": 0
+      },
+      {
+        "id": 4,
+        "texto": "Con tu otra mano, sujeta la pierna más lejana justo encima de la rodilla y levántala, sin despegar el pie del suelo.",
+        "textEn": "With your other hand, grab the far leg just above the knee and lift it, keeping the foot on the ground.",
+        "segundosTimer": 0
+      },
+      {
+        "id": 5,
+        "texto": "Tira de la rodilla hacia ti para girarla de costado, sosteniendo su cabeza con la mano que quedó en su mejilla.",
+        "textEn": "Pull the knee toward you to roll them onto their side, using the hand at their cheek to support the head.",
+        "segundosTimer": 0,
+        "ilustracion": "recoveryPosition"
+      },
+      {
+        "id": 6,
+        "texto": "Ajusta la pierna de arriba para que la cadera y la rodilla queden dobladas en ángulo recto, y su cabeza ligeramente hacia atrás para mantener la vía aérea abierta.",
+        "textEn": "Adjust the top leg so the hip and knee are bent at right angles, and tilt the head back slightly to keep the airway open.",
+        "segundosTimer": 0
+      },
+      {
+        "id": 7,
+        "texto": "Quédate con ella y vigila que siga respirando con normalidad hasta que llegue ayuda.",
+        "textEn": "Stay with them and keep checking that they're breathing normally until help arrives.",
         "segundosTimer": 0
       }
     ]

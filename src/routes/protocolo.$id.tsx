@@ -8,8 +8,9 @@ import { AppFooter } from "@/components/AppFooter";
 import { useSpeech } from "@/lib/speech";
 import { useSession } from "@/lib/engine";
 import { useWakeLock } from "@/lib/wakeLock";
+import { illustrations } from "@/components/illustrations";
 
-type Paso = { id: number; texto: string; textEn: string; segundosTimer: number };
+type Paso = { id: number; texto: string; textEn: string; segundosTimer: number; ilustracion?: string };
 type Protocolo = {
   id: string;
   titulo: string;
@@ -50,6 +51,7 @@ function ProtocolPage() {
   const pasos = protocolo?.pasos ?? [];
   const paso = pasos[index];
   const texto = paso ? (lang === "es" ? paso.texto : paso.textEn) : "";
+  const Illustration = paso?.ilustracion ? illustrations[paso.ilustracion] : undefined;
 
   useWakeLock(!!protocolo);
 
@@ -127,16 +129,21 @@ function ProtocolPage() {
 
       <div className="flex flex-1 items-center overflow-hidden">
         <AnimatePresence mode="wait">
-          <motion.p
+          <motion.div
             key={paso.id}
             initial={{ opacity: 0, x: 48 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -48 }}
             transition={{ duration: 0.28, ease: "easeOut" }}
-            className="py-8 text-3xl font-semibold leading-snug"
+            className="w-full py-8"
           >
-            {texto}
-          </motion.p>
+            {Illustration && (
+              <div className="mx-auto mb-4 h-[180px] w-[180px] max-h-[200px]">
+                <Illustration />
+              </div>
+            )}
+            <p className="text-3xl font-semibold leading-snug">{texto}</p>
+          </motion.div>
         </AnimatePresence>
       </div>
 

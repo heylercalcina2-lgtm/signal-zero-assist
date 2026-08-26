@@ -41,6 +41,7 @@ export default defineConfig({
       { path: "/" },
       { path: "/rcp" },
       { path: "/informe" },
+      { path: "/triaje" },
       { path: "/protocolo/hemorragia" },
       { path: "/protocolo/atragantamiento" },
       { path: "/protocolo/rcp" },
