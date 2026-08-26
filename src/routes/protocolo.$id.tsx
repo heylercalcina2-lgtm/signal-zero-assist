@@ -1,10 +1,13 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { AnimatePresence, motion } from "motion/react";
-import { useState } from "react";
-import { ArrowLeft, Check, Volume2 } from "lucide-react";
+import { useEffect, useState } from "react";
+import { ArrowLeft, Check, Repeat, Volume2, VolumeX } from "lucide-react";
 import protocols from "@/data/protocols.json";
 import { useLang } from "@/lib/i18n";
 import { AppFooter } from "@/components/AppFooter";
+import { useSpeech } from "@/lib/speech";
+import { useSession } from "@/lib/engine";
+import { useWakeLock } from "@/lib/wakeLock";
 
 type Paso = { id: number; texto: string; textEn: string; segundosTimer: number };
 type Protocolo = {
@@ -39,10 +42,33 @@ function ProtocolPage() {
   const { t, lang } = useLang();
   const navigate = useNavigate();
   const [index, setIndex] = useState(0);
+  const [autoRead, setAutoRead] = useState(false);
+  const { speak, supported: speechSupported } = useSpeech(lang);
+  const session = useSession();
 
   const protocolo = (protocols as Protocolo[]).find((p) => p.id === id);
+  const pasos = protocolo?.pasos ?? [];
+  const paso = pasos[index];
+  const texto = paso ? (lang === "es" ? paso.texto : paso.textEn) : "";
 
-  if (!protocolo) {
+  useWakeLock(!!protocolo);
+
+  useEffect(() => {
+    if (!protocolo) return;
+    session.startProtocol(protocolo.id, protocolo.titulo, protocolo.titleEn, protocolo.pasos.length);
+    setIndex(0);
+    // Solo al entrar a un protocolo nuevo — avanzar pasos no debe reiniciar la sesión.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [id]);
+
+  useEffect(() => {
+    if (!protocolo || !autoRead) return;
+    speak(texto);
+    // Se lee de nuevo solo cuando cambia el paso o se activa auto-lectura.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [index, autoRead, protocolo]);
+
+  if (!protocolo || !paso) {
     return (
       <main className="flex min-h-screen flex-col items-center justify-center gap-6 px-6">
         <p className="text-center text-xl">{t.notFound}</p>
@@ -56,23 +82,18 @@ function ProtocolPage() {
     );
   }
 
-  const pasos = protocolo.pasos;
-  const paso = pasos[index]!;
-  const texto = lang === "es" ? paso.texto : paso.textEn;
   const isLast = index === pasos.length - 1;
 
-  const speak = () => {
-    if (typeof window === "undefined" || !("speechSynthesis" in window)) return;
-    window.speechSynthesis.cancel();
-    const u = new SpeechSynthesisUtterance(texto);
-    u.lang = lang === "es" ? "es-ES" : "en-US";
-    u.rate = 0.95;
-    window.speechSynthesis.speak(u);
-  };
-
   const next = () => {
-    if (isLast) navigate({ to: "/" });
-    else setIndex((i) => i + 1);
+    if (isLast) {
+      session.setStepsCompleted(pasos.length);
+      session.finishProtocol();
+      navigate({ to: "/" });
+    } else {
+      const nextIndex = index + 1;
+      session.setStepsCompleted(nextIndex);
+      setIndex(nextIndex);
+    }
   };
 
   return (
@@ -80,7 +101,7 @@ function ProtocolPage() {
       <div className="flex items-center justify-between">
         <Link
           to="/"
-          className="flex h-12 w-12 items-center justify-center rounded-2xl border border-border bg-card"
+          className="flex h-[72px] w-[72px] shrink-0 items-center justify-center rounded-2xl border border-border bg-card"
           aria-label={t.back}
         >
           <ArrowLeft className="h-5 w-5" />
@@ -88,7 +109,7 @@ function ProtocolPage() {
         <span className="text-sm font-semibold uppercase tracking-widest text-muted-foreground">
           {lang === "es" ? protocolo.titulo : protocolo.titleEn}
         </span>
-        <div className="w-12" />
+        <div className="w-[72px] shrink-0" />
       </div>
 
       <div className="mt-6 flex gap-1.5">
@@ -120,14 +141,36 @@ function ProtocolPage() {
       </div>
 
       <div className="mt-auto space-y-3">
-        <button
-          type="button"
-          onClick={speak}
-          className="flex min-h-[72px] w-full items-center justify-center gap-3 rounded-2xl border border-border bg-card text-lg font-semibold active:bg-secondary"
-        >
-          <Volume2 className="h-6 w-6 text-primary" />
-          {t.read}
-        </button>
+        <div className="flex gap-3">
+          <button
+            type="button"
+            onClick={() => setAutoRead((v) => !v)}
+            aria-pressed={autoRead}
+            aria-label={t.autoReadHint}
+            className={`flex min-h-[72px] w-[88px] shrink-0 flex-col items-center justify-center gap-1 rounded-2xl border text-xs font-semibold transition-colors ${
+              autoRead
+                ? "border-primary bg-primary text-primary-foreground"
+                : "border-border bg-card text-foreground active:bg-secondary"
+            }`}
+          >
+            <Repeat className="h-5 w-5" />
+            {t.autoRead}
+          </button>
+          <button
+            type="button"
+            onClick={() => speak(texto)}
+            disabled={!speechSupported}
+            title={speechSupported ? undefined : t.voiceUnavailable}
+            className="flex min-h-[72px] flex-1 items-center justify-center gap-3 rounded-2xl border border-border bg-card text-lg font-semibold active:bg-secondary disabled:opacity-40"
+          >
+            {speechSupported ? (
+              <Volume2 className="h-6 w-6 text-primary" />
+            ) : (
+              <VolumeX className="h-6 w-6 text-muted-foreground" />
+            )}
+            {t.read}
+          </button>
+        </div>
         <button
           type="button"
           onClick={next}

@@ -4,6 +4,19 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/*
+ * Self-hosted variable font: the app must work with zero network access, so
+ * we can't depend on fonts.googleapis.com being reachable. This single file
+ * covers the Latin subset across weights 400-900.
+ */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+  src: url("/fonts/inter-var-latin.woff2") format("woff2");
+}
+
 @theme {
   --font-sans: Inter, ui-sans-serif, system-ui, sans-serif;
 }

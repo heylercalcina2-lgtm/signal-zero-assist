@@ -4,6 +4,7 @@ import { useState } from "react";
 import { ArrowLeft, Check, Share2 } from "lucide-react";
 import { useLang } from "@/lib/i18n";
 import { AppFooter } from "@/components/AppFooter";
+import { useSession } from "@/lib/engine";
 
 export const Route = createFileRoute("/informe")({
   head: () => ({
@@ -24,54 +25,47 @@ export const Route = createFileRoute("/informe")({
   component: ReportPage,
 });
 
-const REPORT = {
-  es: {
-    meta: [
-      ["Hora del incidente", "21:34"],
-      ["Duración de la asistencia", "12 min"],
-      ["Protocolo aplicado", "Hemorragia (6 pasos completados)"],
-      ["Modo RCP", "84 compresiones · 110 bpm"],
-    ],
-    person: [
-      ["Edad aproximada", "Adulto, ~40 años"],
-      ["Estado de consciencia", "Consciente, responde a la voz"],
-      ["Respiración", "Rápida pero regular"],
-      ["Sangrado", "Controlado con presión directa"],
-    ],
-    notes:
-      "Herida profunda en antebrazo izquierdo por vidrio. Se aplicó presión directa con paño limpio durante 10 minutos; el sangrado disminuyó. La persona permanece acostada y abrigada. Sin alergias conocidas informadas por acompañantes.",
-  },
-  en: {
-    meta: [
-      ["Incident time", "21:34"],
-      ["Assistance duration", "12 min"],
-      ["Protocol used", "Bleeding (6 steps completed)"],
-      ["CPR mode", "84 compressions · 110 bpm"],
-    ],
-    person: [
-      ["Approximate age", "Adult, ~40 years"],
-      ["Consciousness", "Conscious, responds to voice"],
-      ["Breathing", "Fast but regular"],
-      ["Bleeding", "Controlled with direct pressure"],
-    ],
-    notes:
-      "Deep laceration on left forearm caused by glass. Direct pressure applied with a clean cloth for 10 minutes; bleeding decreased. Person is lying down and kept warm. No known allergies reported by bystanders.",
-  },
-} as const;
+function formatTime(ms: number) {
+  return new Date(ms).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+}
+
+function formatDuration(startMs: number, endMs: number, minutesLabel: string) {
+  const minutes = Math.max(0, Math.round((endMs - startMs) / 60000));
+  return `${minutes} ${minutesLabel}`;
+}
 
 function ReportPage() {
   const { t, lang } = useLang();
+  const { protocol, cpr } = useSession();
   const [shared, setShared] = useState(false);
-  const data = REPORT[lang];
+
+  const hasData = !!protocol || !!cpr;
+  const now = Date.now();
+
+  const rows: [string, string][] = [];
+  if (protocol) {
+    rows.push([t.reportStart, formatTime(protocol.startedAt)]);
+    rows.push([
+      t.reportDuration,
+      formatDuration(protocol.startedAt, protocol.finishedAt ?? now, t.minutesShort),
+    ]);
+    rows.push([
+      t.reportProtocol,
+      lang === "es" ? protocol.titulo : protocol.titleEn,
+    ]);
+    rows.push([t.reportSteps, t.stepOf(protocol.stepsCompleted, protocol.totalSteps)]);
+  }
+  if (cpr) {
+    rows.push([
+      t.reportCpr,
+      `${cpr.compressions} ${t.compressions} · ${t.bpm}`,
+    ]);
+  }
 
   const plainText = [
     `${t.appName} — ${t.report}`,
     "",
-    ...data.meta.map(([k, v]) => `${k}: ${v}`),
-    "",
-    ...data.person.map(([k, v]) => `${k}: ${v}`),
-    "",
-    `${t.reportNotes}: ${data.notes}`,
+    ...(hasData ? rows.map(([k, v]) => `${k}: ${v}`) : [t.reportNone]),
   ].join("\n");
 
   const share = async () => {
@@ -93,7 +87,7 @@ function ReportPage() {
       <div className="flex items-center justify-between">
         <Link
           to="/"
-          className="flex h-12 w-12 items-center justify-center rounded-2xl border border-border bg-card"
+          className="flex h-[72px] w-[72px] shrink-0 items-center justify-center rounded-2xl border border-border bg-card"
           aria-label={t.back}
         >
           <ArrowLeft className="h-5 w-5" />
@@ -101,7 +95,7 @@ function ReportPage() {
         <span className="text-sm font-semibold uppercase tracking-widest text-muted-foreground">
           {t.report}
         </span>
-        <div className="w-12" />
+        <div className="w-[72px] shrink-0" />
       </div>
 
       <motion.div
@@ -110,14 +104,14 @@ function ReportPage() {
         transition={{ duration: 0.3, ease: "easeOut" }}
         className="mt-6 space-y-3"
       >
-        <Section title={t.reportSummary} rows={data.meta} />
-        <Section title={t.reportPerson} rows={data.person} />
-        <div className="rounded-2xl border border-border bg-card p-4">
-          <h2 className="text-xs font-bold uppercase tracking-widest text-primary">
-            {t.reportNotes}
-          </h2>
-          <p className="mt-3 text-base leading-relaxed">{data.notes}</p>
-        </div>
+        {hasData ? (
+          <Section title={t.reportSummary} rows={rows} />
+        ) : (
+          <div className="rounded-2xl border border-border bg-card p-6 text-center">
+            <p className="text-base font-semibold">{t.reportNone}</p>
+            <p className="mt-2 text-sm text-muted-foreground">{t.reportNoneHint}</p>
+          </div>
+        )}
       </motion.div>
 
       <div className="mt-8 space-y-3">
@@ -141,7 +135,7 @@ function ReportPage() {
   );
 }
 
-function Section({ title, rows }: { title: string; rows: readonly (readonly string[])[] }) {
+function Section({ title, rows }: { title: string; rows: [string, string][] }) {
   return (
     <div className="rounded-2xl border border-border bg-card p-4">
       <h2 className="text-xs font-bold uppercase tracking-widest text-primary">{title}</h2>

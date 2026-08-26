@@ -1,0 +1,26 @@
+[
+  {
+    "url": "/models/Xenova/all-MiniLM-L6-v2/config.json",
+    "bytes": 650
+  },
+  {
+    "url": "/models/Xenova/all-MiniLM-L6-v2/onnx/model_quantized.onnx",
+    "bytes": 22972370
+  },
+  {
+    "url": "/models/Xenova/all-MiniLM-L6-v2/special_tokens_map.json",
+    "bytes": 125
+  },
+  {
+    "url": "/models/Xenova/all-MiniLM-L6-v2/tokenizer.json",
+    "bytes": 711661
+  },
+  {
+    "url": "/models/Xenova/all-MiniLM-L6-v2/tokenizer_config.json",
+    "bytes": 366
+  },
+  {
+    "url": "/ort/ort-wasm-simd.wasm",
+    "bytes": 10014674
+  }
+]

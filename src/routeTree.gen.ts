@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AjustesRouteImport } from './routes/ajustes'
 import { Route as InformeRouteImport } from './routes/informe'
 import { Route as RcpRouteImport } from './routes/rcp'
 import { Route as ProtocoloIdRouteImport } from './routes/protocolo.$id'
@@ -17,6 +18,11 @@ import { Route as ProtocoloIdRouteImport } from './routes/protocolo.$id'
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AjustesRoute = AjustesRouteImport.update({
+  id: '/ajustes',
+  path: '/ajustes',
   getParentRoute: () => rootRouteImport,
 } as any)
 const InformeRoute = InformeRouteImport.update({
@@ -37,12 +43,14 @@ const ProtocoloIdRoute = ProtocoloIdRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/ajustes': typeof AjustesRoute
   '/informe': typeof InformeRoute
   '/rcp': typeof RcpRoute
   '/protocolo/$id': typeof ProtocoloIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/ajustes': typeof AjustesRoute
   '/informe': typeof InformeRoute
   '/rcp': typeof RcpRoute
   '/protocolo/$id': typeof ProtocoloIdRoute
@@ -50,20 +58,22 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/ajustes': typeof AjustesRoute
   '/informe': typeof InformeRoute
   '/rcp': typeof RcpRoute
   '/protocolo/$id': typeof ProtocoloIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/informe' | '/rcp' | '/protocolo/$id'
+  fullPaths: '/' | '/ajustes' | '/informe' | '/rcp' | '/protocolo/$id'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/informe' | '/rcp' | '/protocolo/$id'
-  id: '__root__' | '/' | '/informe' | '/rcp' | '/protocolo/$id'
+  to: '/' | '/ajustes' | '/informe' | '/rcp' | '/protocolo/$id'
+  id: '__root__' | '/' | '/ajustes' | '/informe' | '/rcp' | '/protocolo/$id'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AjustesRoute: typeof AjustesRoute
   InformeRoute: typeof InformeRoute
   RcpRoute: typeof RcpRoute
   ProtocoloIdRoute: typeof ProtocoloIdRoute
@@ -76,6 +86,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ajustes': {
+      id: '/ajustes'
+      path: '/ajustes'
+      fullPath: '/ajustes'
+      preLoaderRoute: typeof AjustesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/informe': {
@@ -104,6 +121,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AjustesRoute: AjustesRoute,
   InformeRoute: InformeRoute,
   RcpRoute: RcpRoute,
   ProtocoloIdRoute: ProtocoloIdRoute,

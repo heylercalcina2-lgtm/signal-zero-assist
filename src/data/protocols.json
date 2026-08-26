@@ -3,40 +3,48 @@
     "id": "hemorragia",
     "titulo": "Hemorragia",
     "titleEn": "Bleeding",
-    "fuente": "Cruz Roja Internacional — Primeros auxilios 2020",
+    "palabrasClave": ["sangre", "sangrando", "corte profundo", "herida abierta", "sangra mucho", "hemorragia"],
+    "palabrasClaveEn": ["blood", "bleeding", "deep cut", "open wound", "gash", "hemorrhage"],
+    "fuente": "Cruz Roja Americana — Guía de primeros auxilios, RCP y DEA (2021); Cruz Roja Española — Primeros auxilios",
     "pasos": [
       {
         "id": 1,
+        "texto": "Si el sangrado es abundante, pide a alguien que llame a emergencias ya. Si estás solo y puedes, llama tú antes de seguir.",
+        "textEn": "If the bleeding is heavy, have someone call emergency services now. If you're alone and able, call before continuing.",
+        "segundosTimer": 0
+      },
+      {
+        "id": 2,
         "texto": "Protégete: usa guantes o una bolsa de plástico antes de tocar la sangre.",
         "textEn": "Protect yourself: use gloves or a plastic bag before touching blood.",
         "segundosTimer": 0
       },
       {
-        "id": 2,
+        "id": 3,
         "texto": "Presiona la herida con fuerza usando un paño limpio o tu mano.",
         "textEn": "Press hard on the wound with a clean cloth or your hand.",
         "segundosTimer": 0
       },
       {
-        "id": 3,
+        "id": 4,
         "texto": "Mantén la presión sin soltar durante 10 minutos completos.",
         "textEn": "Keep pressing without letting go for a full 10 minutes.",
         "segundosTimer": 600
       },
       {
-        "id": 4,
+        "id": 5,
         "texto": "Si el paño se empapa, no lo quites: coloca otro encima y sigue presionando.",
         "textEn": "If the cloth soaks through, don't remove it: add another on top and keep pressing.",
         "segundosTimer": 0
       },
       {
-        "id": 5,
+        "id": 6,
         "texto": "Eleva la zona herida por encima del nivel del corazón si no hay fractura.",
         "textEn": "Raise the injured area above heart level if there is no fracture.",
         "segundosTimer": 0
       },
       {
-        "id": 6,
+        "id": 7,
         "texto": "Abriga a la persona, mantenla acostada y vigila su respiración hasta que llegue ayuda.",
         "textEn": "Keep the person warm, lying down, and watch their breathing until help arrives.",
         "segundosTimer": 0
@@ -47,12 +55,14 @@
     "id": "atragantamiento",
     "titulo": "Atragantamiento",
     "titleEn": "Choking",
-    "fuente": "American Red Cross — Choking Care Steps 2021",
+    "palabrasClave": ["atragantado", "se está ahogando", "no puede respirar", "algo en la garganta", "tosiendo fuerte", "se atoró comiendo"],
+    "palabrasClaveEn": ["choking", "can't breathe", "something stuck in throat", "coughing hard", "gagging on food"],
+    "fuente": "Cruz Roja Americana — Choking Care Steps (2021); American Heart Association — Guías de RCP y ACE (2020)",
     "pasos": [
       {
         "id": 1,
-        "texto": "Pregunta: \"¿Te estás ahogando?\". Si no puede hablar ni toser, actúa de inmediato.",
-        "textEn": "Ask: \"Are you choking?\" If they can't speak or cough, act immediately.",
+        "texto": "Pregunta: \"¿Te estás ahogando?\". Si no puede hablar, toser ni respirar, actúa de inmediato y pide a alguien que llame a emergencias.",
+        "textEn": "Ask: \"Are you choking?\" If they can't speak, cough, or breathe, act immediately and have someone call emergency services.",
         "segundosTimer": 0
       },
       {
@@ -69,58 +79,228 @@
       },
       {
         "id": 4,
-        "texto": "Alterna 5 golpes en la espalda y 5 compresiones hasta que expulse el objeto.",
-        "textEn": "Alternate 5 back blows and 5 thrusts until the object comes out.",
+        "texto": "Alterna 5 golpes en la espalda y 5 compresiones hasta que expulse el objeto o llegue ayuda.",
+        "textEn": "Alternate 5 back blows and 5 thrusts until the object comes out or help arrives.",
         "segundosTimer": 0
       },
       {
         "id": 5,
-        "texto": "Si pierde el conocimiento, acuéstala con cuidado e inicia RCP.",
-        "textEn": "If they become unconscious, lower them gently and start CPR.",
+        "texto": "Si está embarazada o no puedes rodear su cintura, haz compresiones en el centro del pecho en su lugar.",
+        "textEn": "If they're pregnant or you can't wrap your arms around their waist, give chest thrusts at the center of the chest instead.",
+        "segundosTimer": 0
+      },
+      {
+        "id": 6,
+        "texto": "Si pierde el conocimiento, bájala con cuidado al suelo e inicia RCP.",
+        "textEn": "If they become unconscious, lower them gently to the ground and start CPR.",
         "segundosTimer": 0
       }
     ]
   },
   {
     "id": "rcp",
-    "titulo": "RCP",
-    "titleEn": "CPR",
-    "fuente": "AHA — Guías de RCP y ACE 2020",
+    "titulo": "RCP solo con manos",
+    "titleEn": "Hands-Only CPR",
+    "palabrasClave": ["no respira", "no responde", "paro cardíaco", "inconsciente", "sin pulso", "se desmayó", "colapsó", "no tiene pulso"],
+    "palabrasClaveEn": ["not breathing", "unresponsive", "cardiac arrest", "no pulse", "collapsed", "passed out", "won't wake up"],
+    "fuente": "American Heart Association — Hands-Only CPR; Guías de RCP y ACE (2020)",
     "pasos": [
       {
         "id": 1,
-        "texto": "Comprueba si responde: sacude sus hombros y llámala en voz alta.",
-        "textEn": "Check for response: tap the shoulders and call out loudly.",
+        "texto": "Comprueba si responde: sacude sus hombros con firmeza y llámala en voz alta.",
+        "textEn": "Check for response: firmly tap the shoulders and call out loudly.",
         "segundosTimer": 0
       },
       {
         "id": 2,
-        "texto": "Mira si respira con normalidad durante 10 segundos.",
-        "textEn": "Look for normal breathing for 10 seconds.",
+        "texto": "Si no responde, mira si respira con normalidad durante 10 segundos.",
+        "textEn": "If there's no response, look for normal breathing for 10 seconds.",
         "segundosTimer": 10
       },
       {
         "id": 3,
-        "texto": "Pide a alguien que busque ayuda y un desfibrilador (DEA).",
-        "textEn": "Ask someone to get help and an AED.",
+        "texto": "Si no respira con normalidad, pide a alguien que llame a emergencias y busque un desfibrilador (DEA). Si estás solo, llama tú primero.",
+        "textEn": "If they aren't breathing normally, have someone call emergency services and find an AED. If you're alone, call first yourself.",
         "segundosTimer": 0
       },
       {
         "id": 4,
-        "texto": "Coloca las manos entrelazadas en el centro del pecho, brazos rectos.",
-        "textEn": "Place interlocked hands at the center of the chest, arms straight.",
+        "texto": "Arrodíllate junto al pecho. Coloca el talón de una mano en el centro del pecho y la otra mano encima, dedos entrelazados.",
+        "textEn": "Kneel beside the chest. Place the heel of one hand on the center of the chest and your other hand on top, fingers interlocked.",
         "segundosTimer": 0
       },
       {
         "id": 5,
-        "texto": "Comprime fuerte y rápido: 5 cm de profundidad, 110 por minuto.",
-        "textEn": "Push hard and fast: 5 cm deep, 110 per minute.",
+        "texto": "Con los brazos rectos, comprime fuerte y rápido: unos 5 cm de profundidad, a 100-120 compresiones por minuto. No pares.",
+        "textEn": "With straight arms, push hard and fast: about 5 cm (2 in) deep, at 100-120 compressions per minute. Don't stop.",
         "segundosTimer": 0
       },
       {
         "id": 6,
-        "texto": "No te detengas hasta que llegue ayuda o la persona respire por sí misma.",
-        "textEn": "Don't stop until help arrives or the person breathes on their own.",
+        "texto": "Deja que el pecho vuelva a subir por completo entre cada compresión, sin quitar las manos.",
+        "textEn": "Let the chest fully rise between compressions, without lifting your hands off.",
+        "segundosTimer": 0
+      },
+      {
+        "id": 7,
+        "texto": "No te detengas hasta que llegue ayuda, llegue un DEA listo para usarse, o la persona empiece a respirar.",
+        "textEn": "Don't stop until help arrives, an AED is ready to use, or the person starts breathing.",
+        "segundosTimer": 0
+      }
+    ]
+  },
+  {
+    "id": "atrapada",
+    "titulo": "Persona atrapada tras derrumbe",
+    "titleEn": "Trapped After a Collapse",
+    "palabrasClave": ["atrapado", "atrapada", "derrumbe", "escombros", "terremoto", "no puedo salir", "edificio colapsado", "quedé enterrado"],
+    "palabrasClaveEn": ["trapped", "collapse", "rubble", "earthquake", "can't get out", "building collapsed", "buried under debris"],
+    "fuente": "Cruz Roja Americana — Preparación ante terremotos; FEMA — Earthquake Safety; OMS — Primeros auxilios en desastres",
+    "pasos": [
+      {
+        "id": 1,
+        "texto": "Si tienes teléfono y algo de señal, llama o envía un SMS a emergencias con tu ubicación antes de que se agote la batería.",
+        "textEn": "If you have a phone and any signal, call or text emergency services with your location before the battery runs out.",
+        "segundosTimer": 0
+      },
+      {
+        "id": 2,
+        "texto": "No te muevas bruscamente ni intentes forzar la salida: puedes provocar que más escombros se muevan.",
+        "textEn": "Don't move suddenly or force your way out: you could cause more debris to shift.",
+        "segundosTimer": 0
+      },
+      {
+        "id": 3,
+        "texto": "Cúbrete la boca y la nariz con una tela para no inhalar polvo.",
+        "textEn": "Cover your mouth and nose with cloth to avoid inhaling dust.",
+        "segundosTimer": 0
+      },
+      {
+        "id": 4,
+        "texto": "Para que te ubiquen, golpea una tubería o una pared con un objeto duro, en grupos de 3 golpes.",
+        "textEn": "To help rescuers find you, tap on a pipe or wall with a hard object in groups of 3 taps.",
+        "segundosTimer": 0
+      },
+      {
+        "id": 5,
+        "texto": "Grita solo como último recurso: hacerlo gasta el aire y el oxígeno que tienes disponible.",
+        "textEn": "Shout only as a last resort: it uses up the air and oxygen you have available.",
+        "segundosTimer": 0
+      },
+      {
+        "id": 6,
+        "texto": "Conserva energía: no enciendas fuego ni fósforos (puede haber fugas de gas), y permanece lo más quieto posible.",
+        "textEn": "Conserve your energy: don't light a fire or matches (there may be gas leaks), and stay as still as possible.",
+        "segundosTimer": 0
+      },
+      {
+        "id": 7,
+        "texto": "Repite el patrón de 3 golpes cada pocos minutos y espera. Los equipos de rescate hacen silencios para escuchar señales.",
+        "textEn": "Repeat the pattern of 3 taps every few minutes and wait. Rescue teams go silent on purpose to listen for signals.",
+        "segundosTimer": 0
+      }
+    ]
+  },
+  {
+    "id": "quemadura",
+    "titulo": "Quemadura",
+    "titleEn": "Burn",
+    "palabrasClave": ["quemadura", "me quemé", "fuego", "agua hirviendo", "quemado", "se quemó con aceite"],
+    "palabrasClaveEn": ["burn", "burned", "fire", "boiling water", "scalded", "hot oil burn"],
+    "fuente": "Cruz Roja Americana — First Aid for Burns; Mayo Clinic — First aid: Burns",
+    "pasos": [
+      {
+        "id": 1,
+        "texto": "Llama a emergencias si la quemadura es grande, profunda, en cara, manos o genitales, o si fue por electricidad o químicos.",
+        "textEn": "Call emergency services if the burn is large, deep, on the face, hands, or genitals, or caused by electricity or chemicals.",
+        "segundosTimer": 0
+      },
+      {
+        "id": 2,
+        "texto": "Aleja a la persona de la fuente de calor. Si es electricidad, corta la corriente antes de tocarla.",
+        "textEn": "Move the person away from the heat source. If it's electrical, cut the power before touching them.",
+        "segundosTimer": 0
+      },
+      {
+        "id": 3,
+        "texto": "Enfría la quemadura con agua corriente tibia o fresca, nunca helada ni con hielo.",
+        "textEn": "Cool the burn with cool or lukewarm running water, never ice or ice water.",
+        "segundosTimer": 0
+      },
+      {
+        "id": 4,
+        "texto": "Mantén el agua corriendo sobre la zona durante 10 a 20 minutos completos.",
+        "textEn": "Keep water running over the area for a full 10 to 20 minutes.",
+        "segundosTimer": 600
+      },
+      {
+        "id": 5,
+        "texto": "Retira anillos, reloj o ropa ajustada cerca de la quemadura antes de que empiece a hincharse, sin arrancar nada pegado a la piel.",
+        "textEn": "Remove rings, watches, or tight clothing near the burn before it starts to swell, without pulling off anything stuck to the skin.",
+        "segundosTimer": 0
+      },
+      {
+        "id": 6,
+        "texto": "Cubre con un paño limpio y seco, sin apretar. No revientes las ampollas.",
+        "textEn": "Cover loosely with a clean, dry cloth. Don't pop any blisters.",
+        "segundosTimer": 0
+      },
+      {
+        "id": 7,
+        "texto": "No apliques hielo, mantequilla, pasta dental ni remedios caseros. Abriga a la persona y vigílala hasta que llegue ayuda.",
+        "textEn": "Don't apply ice, butter, toothpaste, or home remedies. Keep the person warm and watch them until help arrives.",
+        "segundosTimer": 0
+      }
+    ]
+  },
+  {
+    "id": "convulsion",
+    "titulo": "Convulsión",
+    "titleEn": "Seizure",
+    "palabrasClave": ["convulsión", "convulsionando", "temblando sin control", "sacudiéndose todo el cuerpo", "movimientos bruscos que no puede controlar", "rígido y temblando", "se le fueron los ojos", "epilepsia", "ataque epiléptico"],
+    "palabrasClaveEn": ["seizure", "convulsing", "shaking uncontrollably", "whole body shaking", "jerking movements they can't control", "stiff and shaking", "eyes rolled back", "epilepsy", "epileptic fit"],
+    "fuente": "Cruz Roja Americana — Seizure First Aid; Epilepsy Foundation — First Aid for Seizures",
+    "pasos": [
+      {
+        "id": 1,
+        "texto": "Mantén la calma y empieza a cronometrar cuánto dura la convulsión.",
+        "textEn": "Stay calm and start timing how long the seizure lasts.",
+        "segundosTimer": 0
+      },
+      {
+        "id": 2,
+        "texto": "Despeja el área alrededor: aparta muebles u objetos duros o filosos con los que se pueda golpear.",
+        "textEn": "Clear the area around them: move away furniture or hard, sharp objects they could hit.",
+        "segundosTimer": 0
+      },
+      {
+        "id": 3,
+        "texto": "Coloca algo blando bajo su cabeza. No la sujetes ni intentes detener sus movimientos.",
+        "textEn": "Put something soft under their head. Don't hold them down or try to stop their movements.",
+        "segundosTimer": 0
+      },
+      {
+        "id": 4,
+        "texto": "No le pongas nada en la boca ni intentes abrírsela: no se puede tragar la lengua y podrías lastimarla.",
+        "textEn": "Don't put anything in their mouth or try to open it: they can't swallow their tongue, and you could hurt them.",
+        "segundosTimer": 0
+      },
+      {
+        "id": 5,
+        "texto": "En cuanto puedas, gírala de lado con cuidado (posición de recuperación) para que las vías respiratorias queden libres.",
+        "textEn": "As soon as you can, gently roll them onto their side (recovery position) to keep the airway clear.",
+        "segundosTimer": 0
+      },
+      {
+        "id": 6,
+        "texto": "Llama a emergencias si dura más de 5 minutos, es su primera convulsión, no despierta después, se repite seguida, o está embarazada, lesionada o en el agua.",
+        "textEn": "Call emergency services if it lasts more than 5 minutes, it's their first seizure, they don't wake up after, it repeats right away, or they're pregnant, injured, or in water.",
+        "segundosTimer": 0
+      },
+      {
+        "id": 7,
+        "texto": "Quédate con ella hasta que esté totalmente despierta y orientada. Es normal que esté confundida o cansada.",
+        "textEn": "Stay with them until they're fully awake and alert. It's normal for them to feel confused or tired afterward.",
         "segundosTimer": 0
       }
     ]
