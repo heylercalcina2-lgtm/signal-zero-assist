@@ -3,7 +3,7 @@
 // precomputed embeddings (src/data/protocol-embeddings.json, generated at
 // build time by scripts/build-embeddings.mjs) using cosine similarity.
 //
-// This is an enhancement layered on top of the 6 protocol cards, never a
+// This is an enhancement layered on top of the protocol cards, never a
 // requirement: the worker is only created and told to load the model once
 // the model files are confirmed present in Cache Storage (see
 // src/lib/aiDownload.ts) — someone who never opens Ajustes and downloads it

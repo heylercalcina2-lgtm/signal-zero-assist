@@ -2,6 +2,7 @@ import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { motion } from "motion/react";
 import {
   Activity,
+  AlertTriangle,
   Bell,
   Compass,
   Download,
@@ -9,6 +10,7 @@ import {
   Flame,
   Flashlight,
   Languages,
+  Moon,
   Move,
   Settings,
   Sparkles,
@@ -53,6 +55,8 @@ const CARDS = [
   { key: "quemadura", icon: Flame, to: "quemadura" },
   { key: "convulsion", icon: Zap, to: "convulsion" },
   { key: "recuperacion", icon: Move, to: "recuperacion" },
+  { key: "desmayo", icon: Moon, to: "desmayo" },
+  { key: "golpecabeza", icon: AlertTriangle, to: "golpecabeza" },
 ] as const;
 
 function Home() {

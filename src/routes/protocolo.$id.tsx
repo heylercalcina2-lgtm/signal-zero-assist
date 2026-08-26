@@ -108,7 +108,7 @@ function ProtocolPage() {
         >
           <ArrowLeft className="h-5 w-5" />
         </Link>
-        <span className="text-sm font-semibold uppercase tracking-widest text-muted-foreground">
+        <span className="min-w-0 flex-1 px-2 text-center text-sm font-semibold uppercase tracking-widest text-muted-foreground">
           {lang === "es" ? protocolo.titulo : protocolo.titleEn}
         </span>
         <div className="w-[72px] shrink-0" />
@@ -131,18 +131,18 @@ function ProtocolPage() {
         <AnimatePresence mode="wait">
           <motion.div
             key={paso.id}
-            initial={{ opacity: 0, x: 48 }}
+            initial={{ opacity: 0, x: 24 }}
             animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -48 }}
+            exit={{ opacity: 0, x: -24 }}
             transition={{ duration: 0.28, ease: "easeOut" }}
-            className="w-full py-8"
+            className="w-full min-w-0 py-8"
           >
             {Illustration && (
               <div className="mx-auto mb-4 h-[180px] w-[180px] max-h-[200px]">
                 <Illustration />
               </div>
             )}
-            <p className="text-3xl font-semibold leading-snug">{texto}</p>
+            <p className="break-words text-3xl font-semibold leading-snug">{texto}</p>
           </motion.div>
         </AnimatePresence>
       </div>
@@ -186,7 +186,7 @@ function ProtocolPage() {
           <Check className="h-7 w-7" />
           {isLast ? t.finish : t.nextStep}
         </button>
-        <p className="pb-2 text-center text-xs text-muted-foreground">
+        <p className="pb-10 text-center text-xs text-muted-foreground">
           {t.source}: {protocolo.fuente}
         </p>
       </div>

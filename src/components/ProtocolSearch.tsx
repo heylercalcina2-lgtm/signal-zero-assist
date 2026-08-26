@@ -10,7 +10,7 @@ const DEBOUNCE_MS = 400;
 // The offline AI search is front-and-center now, not buried in Ajustes: the
 // search box is always visible, and if the model isn't downloaded yet, this
 // component offers to activate it right here — progress bar included —
-// instead of just linking away. It still never blocks the 6 protocol cards
+// instead of just linking away. It still never blocks the protocol cards
 // below: typing while not downloaded just shows the activation prompt.
 export function ProtocolSearch() {
   const { t } = useLang();

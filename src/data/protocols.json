@@ -3,8 +3,8 @@
     "id": "hemorragia",
     "titulo": "Hemorragia",
     "titleEn": "Bleeding",
-    "palabrasClave": ["sangre", "sangrando", "corte profundo", "herida abierta", "sangra mucho", "hemorragia"],
-    "palabrasClaveEn": ["blood", "bleeding", "deep cut", "open wound", "gash", "hemorrhage"],
+    "palabrasClave": ["sangre", "sangrando", "corte profundo", "herida abierta", "sangra mucho", "hemorragia", "me corté y sangro mucho", "se cortó y sangra mucho", "me estoy desangrando", "sangra sin parar", "no para de sangrar", "corte profundo que sangra"],
+    "palabrasClaveEn": ["blood", "bleeding", "deep cut", "open wound", "gash", "hemorrhage", "I'm bleeding a lot", "he's bleeding badly", "she's bleeding badly", "cut and bleeding heavily", "won't stop bleeding", "deep cut bleeding a lot"],
     "fuente": "Cruz Roja Americana — Guía de primeros auxilios, RCP y DEA (2021); Cruz Roja Española — Primeros auxilios",
     "pasos": [
       {
@@ -56,8 +56,8 @@
     "id": "atragantamiento",
     "titulo": "Atragantamiento",
     "titleEn": "Choking",
-    "palabrasClave": ["atragantado", "se está ahogando", "no puede respirar", "algo en la garganta", "tosiendo fuerte", "se atoró comiendo"],
-    "palabrasClaveEn": ["choking", "can't breathe", "something stuck in throat", "coughing hard", "gagging on food"],
+    "palabrasClave": ["no puedo respirar", "no puedo respirar", "me estoy ahogando", "me ahogo", "atragantado", "se está ahogando", "no puede respirar", "algo en la garganta", "se atoró comiendo", "no me entra aire", "me atraganté", "se atragantó", "algo atorado en la garganta"],
+    "palabrasClaveEn": ["I can't breathe", "I can't breathe", "can't breathe", "I'm choking", "choking", "he's choking", "she's choking", "something stuck in throat", "gagging on food", "can't get air in", "choked on food"],
     "fuente": "Cruz Roja Americana — Choking Care Steps (2021); American Heart Association — Guías de RCP y ACE (2020)",
     "pasos": [
       {
@@ -103,8 +103,8 @@
     "id": "rcp",
     "titulo": "RCP solo con manos",
     "titleEn": "Hands-Only CPR",
-    "palabrasClave": ["no respira", "no responde", "paro cardíaco", "inconsciente", "sin pulso", "se desmayó", "colapsó", "no tiene pulso"],
-    "palabrasClaveEn": ["not breathing", "unresponsive", "cardiac arrest", "no pulse", "collapsed", "passed out", "won't wake up"],
+    "palabrasClave": ["no respira", "no responde", "paro cardíaco", "inconsciente", "sin pulso", "colapsó", "no tiene pulso", "mi papá no respira", "mi mamá no respira", "se desmayó y no respira", "no reacciona", "no está respirando", "dejó de respirar", "está tirado y no responde", "no despierta y no respira"],
+    "palabrasClaveEn": ["not breathing", "unresponsive", "cardiac arrest", "no pulse", "collapsed", "won't wake up", "he's not breathing", "she's not breathing", "my dad isn't breathing", "not breathing", "stopped breathing", "won't respond", "collapsed and not breathing", "not moving and not breathing"],
     "fuente": "American Heart Association — Hands-Only CPR; Guías de RCP y ACE (2020)",
     "pasos": [
       {
@@ -156,8 +156,8 @@
     "id": "atrapada",
     "titulo": "Persona atrapada tras derrumbe",
     "titleEn": "Trapped After a Collapse",
-    "palabrasClave": ["atrapado", "atrapada", "derrumbe", "escombros", "terremoto", "no puedo salir", "edificio colapsado", "quedé enterrado"],
-    "palabrasClaveEn": ["trapped", "collapse", "rubble", "earthquake", "can't get out", "building collapsed", "buried under debris"],
+    "palabrasClave": ["atrapado", "atrapada", "derrumbe", "escombros", "terremoto", "no puedo salir", "edificio colapsado", "quedé enterrado", "estoy atrapado", "estoy atrapada", "no puedo moverme del escombro", "quedé atrapado bajo escombros", "estoy enterrado bajo escombros"],
+    "palabrasClaveEn": ["trapped", "collapse", "rubble", "earthquake", "can't get out", "building collapsed", "buried under debris", "I'm trapped", "I'm stuck under rubble", "I can't get out", "I'm buried under debris"],
     "fuente": "Cruz Roja Americana — Preparación ante terremotos; FEMA — Earthquake Safety; OMS — Primeros auxilios en desastres",
     "pasos": [
       {
@@ -208,8 +208,8 @@
     "id": "quemadura",
     "titulo": "Quemadura",
     "titleEn": "Burn",
-    "palabrasClave": ["quemadura", "me quemé", "fuego", "agua hirviendo", "quemado", "se quemó con aceite"],
-    "palabrasClaveEn": ["burn", "burned", "fire", "boiling water", "scalded", "hot oil burn"],
+    "palabrasClave": ["quemadura", "me quemé", "fuego", "agua hirviendo", "quemado", "se quemó con aceite", "me quemé con aceite", "me quemé la mano", "se quemó con agua hirviendo", "quemadura de aceite caliente", "me quemé cocinando"],
+    "palabrasClaveEn": ["burn", "burned", "fire", "boiling water", "scalded", "hot oil burn", "I burned myself", "burned with hot oil", "scalded with boiling water", "burned my hand"],
     "fuente": "Cruz Roja Americana — First Aid for Burns; Mayo Clinic — First aid: Burns",
     "pasos": [
       {
@@ -260,8 +260,8 @@
     "id": "convulsion",
     "titulo": "Convulsión",
     "titleEn": "Seizure",
-    "palabrasClave": ["convulsión", "convulsionando", "temblando sin control", "sacudiéndose todo el cuerpo", "movimientos bruscos que no puede controlar", "rígido y temblando", "se le fueron los ojos", "epilepsia", "ataque epiléptico"],
-    "palabrasClaveEn": ["seizure", "convulsing", "shaking uncontrollably", "whole body shaking", "jerking movements they can't control", "stiff and shaking", "eyes rolled back", "epilepsy", "epileptic fit"],
+    "palabrasClave": ["convulsión", "convulsionando", "temblando sin control", "sacudiéndose todo el cuerpo", "movimientos bruscos que no puede controlar", "rígido y temblando", "se le fueron los ojos", "epilepsia", "ataque epiléptico", "está temblando en el suelo", "le dio un ataque y está temblando", "está tirado temblando", "convulsionando en el piso", "se sacude en el piso"],
+    "palabrasClaveEn": ["seizure", "convulsing", "shaking uncontrollably", "whole body shaking", "jerking movements they can't control", "stiff and shaking", "eyes rolled back", "epilepsy", "epileptic fit", "shaking on the ground", "having a seizure on the floor", "convulsing on the floor"],
     "fuente": "Cruz Roja Americana — Seizure First Aid; Epilepsy Foundation — First Aid for Seizures",
     "pasos": [
       {
@@ -312,8 +312,8 @@
     "id": "recuperacion",
     "titulo": "Posición de recuperación",
     "titleEn": "Recovery Position",
-    "palabrasClave": ["inconsciente pero respira", "no responde pero respira", "se desmayó y respira", "posición de recuperación", "de lado inconsciente", "respira pero no despierta"],
-    "palabrasClaveEn": ["unconscious but breathing", "unresponsive but breathing", "passed out and breathing", "recovery position", "unconscious on their side", "breathing but won't wake up"],
+    "palabrasClave": ["posición de recuperación", "inconsciente pero respira con normalidad", "de lado inconsciente"],
+    "palabrasClaveEn": ["recovery position", "unconscious but breathing normally", "unconscious on their side"],
     "fuente": "American Heart Association — First Aid; Cruz Roja Americana — Recovery Position / First Aid Basics",
     "pasos": [
       {
@@ -357,6 +357,98 @@
         "id": 7,
         "texto": "Quédate con ella y vigila que siga respirando con normalidad hasta que llegue ayuda.",
         "textEn": "Stay with them and keep checking that they're breathing normally until help arrives.",
+        "segundosTimer": 0
+      }
+    ]
+  },
+  {
+    "id": "desmayo",
+    "titulo": "Desmayo",
+    "titleEn": "Fainting",
+    "palabrasClave": ["desmayo", "se desmayó", "se desmayo", "se desvaneció", "perdió el conocimiento un momento", "mareo y se cayó", "me voy a desmayar", "me siento mareada y débil", "síncope", "se puso pálida y se desmayó", "me desmayé", "se marea y se cae"],
+    "palabrasClaveEn": ["fainting", "fainted", "passed out briefly", "syncope", "felt dizzy and collapsed", "I feel like I'm going to faint", "lightheaded and about to pass out", "turned pale and fainted", "I fainted", "got dizzy and fell"],
+    "fuente": "Cruz Roja Americana — First Aid for Fainting; Mayo Clinic — Fainting: First aid",
+    "pasos": [
+      {
+        "id": 1,
+        "texto": "Comprueba que respira con normalidad y que responde al hablarle o tocarla. Si no respira con normalidad, empieza RCP de inmediato.",
+        "textEn": "Check that they're breathing normally and respond when you speak to or touch them. If they're not breathing normally, start CPR right away.",
+        "segundosTimer": 0
+      },
+      {
+        "id": 2,
+        "texto": "Recuéstala boca arriba y eleva sus piernas unos 30 cm para que la sangre vuelva al cerebro.",
+        "textEn": "Lay them on their back and raise their legs about 30 cm (12 in) to help blood flow back to the brain.",
+        "segundosTimer": 0
+      },
+      {
+        "id": 3,
+        "texto": "Afloja ropa ajustada alrededor del cuello y la cintura, y dale aire fresco.",
+        "textEn": "Loosen tight clothing around the neck and waist, and give them fresh air.",
+        "segundosTimer": 0
+      },
+      {
+        "id": 4,
+        "texto": "No la sientes ni la pares de golpe apenas despierte: puede volver a desmayarse. Que se quede acostada unos minutos.",
+        "textEn": "Don't sit or stand them up suddenly once they wake up: they could faint again. Have them stay lying down for a few minutes.",
+        "segundosTimer": 0
+      },
+      {
+        "id": 5,
+        "texto": "Llama a emergencias si no despierta en 1 minuto, se desmayó por un golpe, le pasa seguido, está embarazada, tiene dolor de pecho, o es diabética.",
+        "textEn": "Call emergency services if they don't wake up within 1 minute, they fainted after an injury, it happens repeatedly, they're pregnant, have chest pain, or are diabetic.",
+        "segundosTimer": 0
+      },
+      {
+        "id": 6,
+        "texto": "Cuando despierte, dale de a poco algo de tomar si está alerta y puede tragar bien. Quédate con ella hasta que se sienta bien.",
+        "textEn": "Once awake, offer small sips of water if they're alert and can swallow safely. Stay with them until they feel better.",
+        "segundosTimer": 0
+      }
+    ]
+  },
+  {
+    "id": "golpecabeza",
+    "titulo": "Golpe fuerte en la cabeza",
+    "titleEn": "Head Injury",
+    "palabrasClave": ["golpe en la cabeza", "se golpeó la cabeza", "se pegó en la cabeza", "cayó y se golpeó la cabeza", "golpe fuerte en la cabeza", "me golpeé la cabeza", "chichón después de un golpe", "se cayó y se pegó en la cabeza", "trauma craneal", "golpe en la cabeza tras una caída", "se dio en la cabeza"],
+    "palabrasClaveEn": ["head injury", "hit his head", "hit her head", "hit my head", "fell and hit their head", "bump on the head after a fall", "head trauma", "hard blow to the head", "hit head falling"],
+    "fuente": "Cruz Roja Americana — Head Injury First Aid; Mayo Clinic — Head trauma: First aid",
+    "pasos": [
+      {
+        "id": 1,
+        "texto": "Llama a emergencias si perdió el conocimiento, vomita, tiene una pupila más grande que la otra, convulsiona, o el golpe fue fuerte.",
+        "textEn": "Call emergency services if they lost consciousness, are vomiting, one pupil looks larger than the other, they have a seizure, or the blow was severe.",
+        "segundosTimer": 0
+      },
+      {
+        "id": 2,
+        "texto": "Si hay sangrado, presiona la herida con un paño limpio, pero sin apretar fuerte si sospechas fractura de cráneo.",
+        "textEn": "If there's bleeding, press a clean cloth on the wound, but don't press hard if you suspect a skull fracture.",
+        "segundosTimer": 0
+      },
+      {
+        "id": 3,
+        "texto": "Mantenla quieta y no la muevas, sobre todo si se golpeó también el cuello o la espalda.",
+        "textEn": "Keep them still and avoid moving them, especially if they also hit their neck or back.",
+        "segundosTimer": 0
+      },
+      {
+        "id": 4,
+        "texto": "Aplica frío envuelto en un paño sobre el chichón, 20 minutos cada vez, para bajar la hinchazón.",
+        "textEn": "Apply a cold pack wrapped in cloth to the bump for 20 minutes at a time to reduce swelling.",
+        "segundosTimer": 0
+      },
+      {
+        "id": 5,
+        "texto": "Vigílala de cerca las próximas 24 horas: confusión, sueño excesivo, vómito repetido, o dolor de cabeza que empeora son señales de que debe ir a emergencias.",
+        "textEn": "Watch them closely for the next 24 hours: confusion, excessive sleepiness, repeated vomiting, or a worsening headache are signs they need emergency care.",
+        "segundosTimer": 0
+      },
+      {
+        "id": 6,
+        "texto": "No le des analgésicos con aspirina o ibuprofeno sin hablar con un médico: pueden aumentar el riesgo de sangrado.",
+        "textEn": "Don't give pain relievers with aspirin or ibuprofen without checking with a doctor first: they can increase bleeding risk.",
         "segundosTimer": 0
       }
     ]
